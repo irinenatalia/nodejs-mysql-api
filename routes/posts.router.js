@@ -1,9 +1,10 @@
 const express = require("express")
 const router = express.Router()
+const app = express()
 
 const postsController = require("../controller/posts.controller")
 
-express.use(function(req, res, next) {
+app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS,PUT,DELETE');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Accept');
   
