@@ -3,6 +3,12 @@ const app = express()
 
 require('dotenv').config()
 
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Methods', 'POST,GET,OPTIONS,PUT,DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type,Accept');
+  
+    next();
+  });
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
