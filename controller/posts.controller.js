@@ -23,6 +23,7 @@ const postsController = {
         } catch (error) {
             console.log(error)
             res.json({
+                error: error,
                 status: "error"
             })
         }
