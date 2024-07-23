@@ -31,6 +31,7 @@ const postsController = {
     create: async (req, res) => {
         try {
             const { title, content } = req.body
+            console.log(req.body)
             const sql = "insert into posts (title, content) values (?, ?)"
             const [rows, fields] = await pool.query(sql, [title, content])
             res.json({
@@ -39,6 +40,7 @@ const postsController = {
         } catch (error) {
             console.log(error)
             res.json({
+                error: error,
                 status: "error"
             })
         }
